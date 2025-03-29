@@ -17,7 +17,7 @@ public class Assgnm3 {
 		String pwd = driver.findElement(By.xpath("//b/following-sibling::b/i")).getText();
 		driver.findElement(By.id("username")).sendKeys(username);
 		driver.findElement(By.id("password")).sendKeys(pwd);
-		
+		System.out.println("thank you");	
 		
 
 	}
