@@ -11,13 +11,7 @@
     <version>4.26.0</version>
 </dependency>
 
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.10.2</version>
-    <scope>test</scope>
-</dependency>
+
 
 
   </dependencies>
@@ -31,6 +25,28 @@
           <release>21</release>
         </configuration>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.8.1</version> <!-- You can update this version if needed -->
+            <configuration>
+                <source>1.8</source> <!-- Specify your desired Java source version -->
+                <target>1.8</target> <!-- Specify your desired Java target version -->
+            </configuration>
+        </plugin>
+             <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.2</version> <!-- You can update this version if needed -->
+            <configuration>
+                <includes>
+                    <include>**/*Test.java</include> <!-- Pattern for test classes -->
+                </includes>
+                <testFailureIgnore>false</testFailureIgnore> <!-- Whether to ignore failed tests -->
+                <forkCount>1</forkCount> <!-- Number of JVMs to fork for running tests -->
+                <reuseForks>true</reuseForks> <!-- Reuse JVMs to speed up tests -->
+            </configuration>
+        </plugin>
     </plugins>
   </build>
 </project>
